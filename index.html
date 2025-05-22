@@ -3,51 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student ERP - Attendance PoC</title>
+    <title>Jupitone - Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Student ERP - Attendance PoC</h1>
-
-        <div id="login-view">
-            <h2>Select Role</h2>
-            <button id="login-professor">I am a Professor</button>
-            <button id="login-student">I am a Student</button>
-            <p class="note">Note: For this PoC, both roles operate in the same browser. In a real app, these would be separate interfaces/logins.</p>
-        </div>
-
-        <div id="professor-view" class="view hidden">
-            <h2>Professor Dashboard</h2>
-            <button id="start-session-btn">Start Attendance Session</button>
-            <div id="professor-status"></div>
-            <h3>Attended Students:</h3>
-            <ul id="attended-students-list">
-                <!-- Students will be listed here -->
-            </ul>
-            <button class="back-to-login">Back to Login</button>
-        </div>
-
-        <div id="student-view" class="view hidden">
-            <h2>Student Dashboard</h2>
-            <div id="session-status">No active session.</div>
-            <button id="mark-attendance-btn" disabled>Mark My Attendance</button>
-            <div id="student-status"></div>
-            <p>Your Student ID: <strong id="student-id-display"></strong></p>
-            <button class="back-to-login">Back to Login</button>
-        </div>
-
-        <div id="loading-overlay" class="hidden">
-            <div class="spinner"></div>
-            <p>Processing...</p>
-        </div>
-
-        <div class="logs">
-            <h3>System Logs:</h3>
-            <pre id="log-output"></pre>
+        <h1>Jupitone Attendance</h1>
+        <div id="login-form">
+            <h2>Login</h2>
+            <select id="user-type">
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+            </select>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button id="login-btn">Login</button>
+            <p id="login-error" class="error-message"></p>
         </div>
     </div>
-
-    <script src="script.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 </html>
