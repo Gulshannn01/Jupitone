@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - Jupitone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Teacher Dashboard</h1>
+            <button id="logout-btn">Logout</button>
+        </header>
+        <main>
+            <div id="session-controls">
+                <h2>Attendance Session</h2>
+                <select id="class-selector">
+                    <!-- Populate with teacher's classes dynamically -->
+                    <option value="cs101">CS101 - Intro to Programming</option>
+                    <option value="phy202">PHY202 - Modern Physics</option>
+                </select>
+                <button id="start-session-btn">Start Attendance Session</button>
+                <button id="stop-session-btn" disabled>Stop Attendance Session</button>
+                <p id="session-status">Status: No active session.</p>
+                <p id="teacher-location">Your Location: Not shared</p>
+            </div>
+
+            <div id="attendance-list">
+                <h2>Live Attendance</h2>
+                <ul id="students-present">
+                    <!-- Students who marked attendance will appear here -->
+                </ul>
+            </div>
+        </main>
+    </div>
+    <script src="js/common.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/geolocation.js"></script>
+    <script src="js/websocket.js"></script>
+    <script src="js/teacher.js"></script>
+</body>
+</html>
